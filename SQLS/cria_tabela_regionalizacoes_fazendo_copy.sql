@@ -6,9 +6,9 @@ CREATE TABLE IF NOT EXISTS public.mesorregioes_ibge
     sigla text
 );
 
-COPY messoregioes_ibge
+COPY mesoregioes_ibge ("cd_meso", "nm_meso", "sigla")
 FROM '/mesorregioes_ibge.csv'
-WITH DELIMITER ';' CSV HEADER;
+WITH CSV HEADER;
 
 INSERT INTO cidades_a_visitar (nome_do_municipio)
 VALUES ('Lagoa Santa'),
